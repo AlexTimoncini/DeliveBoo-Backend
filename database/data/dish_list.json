@@ -1,0 +1,276 @@
+{
+    "dish_list": [
+        {
+            "name": "BoolCheeseBurger",
+            "description": "You will never experience something this good, CHEESE!",
+            "price": 7.99,
+            "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/cheeseburger--hero-mob.jpg.webp?itok=zUC2Hd7n",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "BoolDoubleBurger",
+            "description": "Double Meat Double Fun.",
+            "price": 9.99,
+            "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/double-cheeseburger--hero-mob.jpg.webp?itok=h2Sb6fQv",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "BoolChickenBurger",
+            "description": "Sometimes you could admit that CHICKEN is better than Steak.",
+            "price": 6.99,
+            "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/chickenburger--hero-mob.jpg.webp?itok=3ii-KClB",
+            "availability": false,
+            "visible": true
+        },
+        {
+            "name": "BoolFishBurger",
+            "description": "Aaaaargh, Fish o'Neal.",
+            "price": 4.99,
+            "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/filet-o-fish--hero-mob.jpg.webp?itok=kxKSQ52V",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "BoolBaconBurger",
+            "description": "Just BACON, What Else? ",
+            "price": 9.99,
+            "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/gran-crispy-mcbacon--hero-mob_0.jpg.webp?itok=IxGQroUp",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "BoolSelectionBurger",
+            "description": "Hey, if Gordon says it's good, it has to be good.",
+            "price": 10.99,
+            "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/myselection-chicken-avocado--hero-mob.jpg?itok=6B4inxSd",
+            "availability": false,
+            "visible": true
+        },
+        {
+            "name": "BoolFries",
+            "description": "Do I have to add anything?",
+            "price": 3.99,
+            "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/patate-regolari_mobile_0.jpg.webp?itok=dHGCytPo",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "BoolNuggets",
+            "description": "MUST-HAVE!",
+            "price": 2.99,
+            "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/chicken-mcnuggets_mobile.jpg.webp?itok=-3FSOlc1",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Water",
+            "description": "Lilia Water Plastic Bottle",
+            "price": 0.99,
+            "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/acqua-lilla_mobile.jpg.webp?itok=rSdWmsOF",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "BoolCoke",
+            "description": "DRINK, DRINK DRINK!",
+            "price": 3.99,
+            "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/cup-bibite-mobile_0.jpg.webp?itok=zUg1ivDC",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Pizza Margherita",
+            "description": "A classic Italian pizza with tomato sauce, mozzarella cheese, and fresh basil.",
+            "price": 8.99,
+            "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Pizza Diavola",
+            "description": "A spicy pizza with tomato sauce, mozzarella cheese, spicy salami, and chili peppers.",
+            "price": 9.99,
+            "photo": "https://s3.eu-central-1.amazonaws.com/quomi/media/133057/conversions/Pizza-Diavola-thumb-big.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Pizza Capricciosa",
+            "description": "A pizza with tomato sauce, mozzarella cheese, ham, mushrooms, artichokes, and black olives.",
+            "price": 10.99,
+            "photo": "https://i0.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2017/12/3240_Pizza.jpg?resize=895%2C616&ssl=1",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Nigiri Salmon Sushi",
+            "description": "A type of sushi consisting of a slice of raw salmon placed over pressed vinegared rice.",
+            "price": 14.99,
+            "photo": "https://cdn.cook.stbm.it/thumbnails/ricette/144/144483/hd750x421.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Tonkotsu Ramen",
+            "description": "A type of ramen made with a base of pork bone broth, served with wheat noodles, slices of pork belly, green onions, and often a soft boiled egg.",
+            "price": 12.99,
+            "photo": "https://www.foodandwine.com/thmb/0AXGLeY6dYnY8sEXFqxBa8opDrs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Tonkotsu-Ramen-FT-BLOG1122-8fe6c12d609a4fd4ab246bea3aae140e.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Shrimp Tempura",
+            "description": "A Japanese dish where shrimp are coated in batter and deep fried until crispy.",
+            "price": 13.99,
+            "photo": "https://www.sidechef.com/recipe/b9707c31-d58d-4f69-a76d-9d029c6ee8a7.jpg?d=1408x1120",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Chilaquiles",
+            "description": "Chilaquiles are a traditional Mexican dish using baked or fried tortillas as the base - great for a casual gathering.",
+            "price": 5.99,
+            "photo": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-424772_11-65058a6.jpg?quality=90&webp=true&resize=300,272",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Tacos al pastor",
+            "description": "This historic dish is one of our most popular varieties of tacos, with origins dating back to the 1920s and 30s and the arrival of Lebanese and Syrian immigrants to Mexico.",
+            "price": 8.99,
+            "photo": "https://images.immediate.co.uk/production/volatile/sites/30/2023/01/GettyImages-1410200729-0a2afd0.jpg?quality=90&webp=true&fit=975,649",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Elote",
+            "description": "The best corn on the cob you will ever have!",
+            "price": 2.99,
+            "photo": "https://images.immediate.co.uk/production/volatile/sites/30/2023/01/GettyImages-507452097-6-d0fddb1.jpg?quality=90&webp=true&crop=11px,1521px,3153px,2100px&fit=975,649",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Chicken Wings",
+            "description": "definitely better than KFC",
+            "price": 5.99,
+            "photo": "https://www.lifesambrosia.com/wp-content/uploads/Deep-Fried-Chicken-Wings-Recipe-Photo-11-scaled.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Gus' Choice",
+            "description": "You don't need any description, this is Gus' Choice.",
+            "price": 4.59,
+            "photo": "https://cdn.britannica.com/13/234013-050-73781543/rice-and-chorizo-burrito.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Gus Mashed Potato Bowl",
+            "description": "You better try this (This is not an advice).",
+            "price": 5.50,
+            "photo": "https://kitchendivas.com/wp-content/uploads/2021/02/KFC-Famous-Bowl20.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Wrap Kebab",
+            "description": "Our wrap is DA BEST in DA WEST!",
+            "price": 5.00,
+            "photo": "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chicken_kebab_wrap_35076_16x9.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Doner Kebab",
+            "description": "KEBAB, KEBAB, KEBAB!",
+            "price": 4.00,
+            "photo": "https://www.thespruceeats.com/thmb/o7Szsda7azjqS_7Ak-nMr_1OiI0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/doner-kebab-recipe-4171703-hero-01-c14d8b7189df4685a50bae311317f831.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Chicken Shawarma",
+            "description": "Our signature recipe, you must try this!",
+            "price": 8.00,
+            "photo": "https://www.recipetineats.com/wp-content/uploads/2017/01/Chicken-Shawarma-Wrap_3.jpg?resize=650,813",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Escargots",
+            "description": "Would you believe me if I told you that the whole process takes 3 full days?! That explains the price tag, right? ",
+            "price": 15.99,
+            "photo": "https://dreamsinparis.com/wp-content/uploads/2022/01/Escargots-1024x768.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Les Cuisses De Grenouille",
+            "description": "Don't be shy, these are the best frogs you will ever try!",
+            "price": 12.99,
+            "photo": "https://dreamsinparis.com/wp-content/uploads/2022/01/Les-cuisses-de-Grenouille-Frog-legs-1024x768.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Roquefort",
+            "description": "Wait, is this blue?",
+            "price": 3.99,
+            "photo": "https://dreamsinparis.com/wp-content/uploads/2022/01/Roquefort-blue-cheese-1024x768.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Chicken Satay",
+            "description": "If you've never had the real stuff, then you'll fall in love with this special Thai chicken satay recipe.",
+            "price": 8.59,
+            "photo": "https://www.thespruceeats.com/thmb/FnXzJ8TJot1llYPINZ7F1BL3eqs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/chicken-satay-recipe-3217478-herp-01-e78b544a0775490ea78b856f83a949bd.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Fillet of Fished in Banana Leaf",
+            "description": "Hey, If you don't like this, you're wrong.",
+            "price": 9.99,
+            "photo": "https://www.thespruceeats.com/thmb/ykVcLHhMAhXWnbCYW3VZWQ9KSaE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/thai-fish-fillet-baked-in-banana-leaf-3217405-hero-01-8cb30145c76f478ca7049c2ad1dee82e.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Mini Shrimp Lettuce Wraps",
+            "description": "They are small, but they got a big heart!",
+            "price": 3.99,
+            "photo": "https://www.thespruceeats.com/thmb/GPecU3V__toiFIJgZdRhD1xnNU0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mini-shrimp-lettuce-wraps-3217683-hero-01-593a2d390eb84b87b8b1904ce4f86e4c.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Carbonara",
+            "description": "Italy has the best food no cap!",
+            "price": 6.99,
+            "photo": "https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/03/Carbonara-ricetta-5328.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Amatriciana",
+            "description": "The colosseum straight to your table",
+            "price": 6.99,
+            "photo": "https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/10/Bucatini-all-amatriciana-4802.jpg",
+            "availability": true,
+            "visible": true
+        },
+        {
+            "name": "Cacio e Pepe",
+            "description": "This is not a dream!",
+            "price": 6.99,
+            "photo": "https://blog.giallozafferano.it/dulcisinforno/wp-content/uploads/2021/01/Pasta-cacio-e-pepe-2634.jpg",
+            "availability": true,
+            "visible": true
+        }
+    ]
+}
