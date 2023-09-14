@@ -32,7 +32,7 @@ class DishSeeder extends Seeder
                 $newDish->price = $dish['price'];
                 $newDish->photo = $dish['photo'];
                 $newDish->available = $dish['availability'];
-                $newDish->visible = 1;
+                $newDish->visible = true;
                 $newDish->save();
             }
         }
