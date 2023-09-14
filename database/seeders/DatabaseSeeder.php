@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             UserSeeder::class,
             IngredientSeeder::class,
-            DishSeeder::class
+            DishSeeder::class,
+            OrderSeeder::class
         ]);
     }
 }
