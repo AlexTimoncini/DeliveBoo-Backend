@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
             $dataPath = base_path('database/data');
             $json = File::get($dataPath.'/category_list.json');
             $data = json_decode($json, true);
-            foreach($data['types'] as $type){
+            foreach($data['categories'] as $type){
                 $newType = new Category();
                 $newType->name = $type['name'];
                 $newType->color = $type['color'];
