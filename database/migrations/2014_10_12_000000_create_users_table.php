@@ -25,6 +25,7 @@ return new class extends Migration
             $table->text('logo');
             $table->text('image');
             $table->string('phone')->unique();
+            $table->text('description');
             $table->rememberToken();
             $table->timestamps();
         });
