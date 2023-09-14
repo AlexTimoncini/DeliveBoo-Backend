@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Dish extends Model
 {
     use HasFactory;
+
+    public function categories(){
+        return $this->belongsTo(Category::class);
+    }
 }
