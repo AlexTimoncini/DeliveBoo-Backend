@@ -1,0 +1,60 @@
+{
+    "types" : [
+        {
+            "name": "Burger",
+            "color": "#f2cf63"
+        },
+        {
+            "name": "Sides",
+            "color": "#02733e"
+        },
+        {
+            "name": "Drink",
+            "color": "#bde3f2"
+        },
+        {
+            "name": "Pizza",
+            "color": "#f23104"
+        },
+        {
+            "name": "Sushi",
+            "color": "#f25e6b"
+        },
+        {
+            "name": "Ramen",
+            "color": "#f28b0c"
+        },
+        {
+            "name": "Appetizer",
+            "color": "#03a696"
+        },
+        {
+            "name": "Burrito",
+            "color": "#f2e4c9"
+        },
+        {
+            "name": "Kebab",
+            "color": "#bf9a77"
+        },
+        {
+            "name": "Fish",
+            "color": "#5e88bf"
+        },
+        {
+            "name": "Pasta",
+            "color": "#f2b705"
+        },
+        {
+            "name": "Meat",
+            "color": "#984b45"
+        },
+        {
+            "name": "Dessert",
+            "color": "#b665cc"
+        },
+        {
+            "name": "Vegan",
+            "color": "#88a61c"
+        }
+    ]
+}

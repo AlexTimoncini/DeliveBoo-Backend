@@ -1,0 +1,196 @@
+{
+    "ingredients" : [
+        {
+            "name" : "Bread"
+        },
+        {
+            "name" : "Steak"
+        },
+        {
+            "name" : "Cheese"
+        },
+        {
+            "name" : "Onion"
+        },
+        {
+            "name" : "Pickle"
+        },
+        {
+            "name" : "Ketchup"
+        },
+        {
+            "name" : "Senape"
+        },
+        {
+            "name" : "Chicken"
+        },
+        {
+            "name" : "Mayonnaise"
+        },
+        {
+            "name" : "Cod"
+        },
+        {
+            "name" : "Bacon"
+        },
+        {
+            "name" : "Radish"
+        },
+        {
+            "name" : "Tomato"
+        },
+        {
+            "name" : "Avocado"
+        },
+        {
+            "name" : "Potato"
+        },
+        {
+            "name" : "Salmon"
+        },
+        {
+            "name" : "Rice"
+        },
+        {
+            "name" : "Vinegar"
+        },
+        {
+            "name" : "Pork"
+        },
+        {
+            "name" : "Mais"
+        },
+        {
+            "name" : "Garlic"
+        },
+        {
+            "name" : "Egg"
+        },
+        {
+            "name" : "Shrimp"
+        },
+        {
+            "name" : "Batter"
+        },
+        {
+            "name" : "Basil"
+        },
+        {
+            "name" : "Spicy salami"
+        },
+        {
+            "name" : "Chili pepper"
+        },
+        {
+            "name" : "Ham"
+        },
+        {
+            "name" : "Mushroom"
+        },
+        {
+            "name" : "Artichoke"
+        },
+        {
+            "name" : "Olive"
+        },
+        {
+            "name" : "Pineapple"
+        },
+        {
+            "name" : "Paprika"
+        },
+        {
+            "name" : "Rice"
+        },
+        {
+            "name" : "Carrot"
+        },               
+        {
+            "name" : "Lemon"
+        },
+        {
+            "name" : "Butter"
+        },
+        {
+            "name" : "Snail"
+        },
+        {
+            "name" : "Parsley"
+        },
+        {
+            "name" : "Frog"
+        },
+        {
+            "name" : "Coconut"
+        },
+        {
+            "name" : "Lettuce"
+        },
+        {
+            "name" : "Lime"
+        },
+        {
+            "name" : "Pasta"
+        },
+        {
+            "name": "Courgette"
+        },
+        {
+            "name": "Milk"
+        },
+        {
+            "name": "Flour"
+        },
+        {
+            "name": "Apple"
+        },
+        {
+            "name": "Yogurt"
+        },
+        {
+            "name": "Salad"
+        },
+        {
+            "name": "Pepperoni"
+        },
+        {
+            "name": "Bean"
+        },
+        {
+            "name": "Mango"
+        },
+        {
+            "name": "Papaya"
+        },
+        {
+            "name": "Red Wine"
+        },
+        {
+            "name": "White Wine"
+        },
+        {
+            "name": "Beer"
+        },
+        {
+            "name": "Soy"
+        },
+        {
+            "name": "Pepper"
+        },
+        {
+            "name": "Nut"
+        },
+        {
+            "name": "Coffee"
+        },
+        {
+            "name": "Crab"
+        },
+        {
+            "name": "Lobster"
+        },
+        {
+            "name": "Prawn"
+        }
+    ]
+}

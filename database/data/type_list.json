@@ -1,0 +1,64 @@
+{
+    "types" : [
+        {
+            "name": "Fast Food",
+            "logo": "https://cdn-icons-png.flaticon.com/512/385/385102.png"
+        },
+        {
+            "name": "American",
+            "logo": "https://cdn-icons-png.flaticon.com/256/2505/2505032.png"
+        },
+        {
+            "name": "French",
+            "logo": "https://cdn-icons-png.flaticon.com/512/3187/3187475.png"
+        },
+        {
+            "name": "Italian",
+            "logo": "https://cdn-icons-png.flaticon.com/512/4624/4624275.png"
+        },
+        {
+            "name": "Turkish",
+            "logo": "https://cdn-icons-png.flaticon.com/256/6978/6978155.png"
+        },
+        {
+            "name": "Asian",
+            "logo": "https://cdn-icons-png.flaticon.com/512/3183/3183463.png"
+        },
+        {
+            "name": "Thai",
+            "logo": "https://cdn-icons-png.flaticon.com/256/909/909119.png"
+        },
+        {
+            "name": "Kebab",
+            "logo": "https://cdn-icons-png.flaticon.com/256/7499/7499501.png"
+        },
+        {
+            "name": "Arabic",
+            "logo": "https://cdn-icons-png.flaticon.com/256/4727/4727267.png"
+        },
+        {
+            "name": "Pizzeria",
+            "logo": "https://cdn-icons-png.flaticon.com/256/3595/3595458.png"
+        },
+        {
+            "name": "Bistrot",
+            "logo": "https://cdn-icons-png.flaticon.com/256/9703/9703110.png"
+        },
+        {
+            "name": "Mexican",
+            "logo": "https://cdn-icons-png.flaticon.com/512/5787/5787107.png"
+        },
+        {
+            "name": "Japanese",
+            "logo": "https://cdn-icons-png.flaticon.com/512/2718/2718224.png"
+        },
+        {
+            "name": "Sushi",
+            "logo": "https://cdn-icons-png.flaticon.com/256/2252/2252076.png"
+        },
+        {
+            "name": "Chinese",
+            "logo": "https://cdn.discordapp.com/attachments/1134115264926068756/1151084796529877082/image.png"
+        }
+    ]
+}
