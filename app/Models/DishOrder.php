@@ -5,12 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class DishOrder extends Model
 {
     use HasFactory;
-
-    public function dishes()
-    {
-        return $this->belongsToMany(Dish::class)->withPivot('customer_address');
-    }
 }

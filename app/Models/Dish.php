@@ -9,11 +9,18 @@ class Dish extends Model
 {
     use HasFactory;
 
-    public function categories(){
+    public function categories()
+    {
         return $this->belongsTo(Category::class);
     }
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsTo(User::class);
+    }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
     }
 }
