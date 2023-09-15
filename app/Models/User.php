@@ -43,7 +43,18 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function types(){
+    public function types()
+    {
         return $this->belongsToMany(Type::class);
+    }
+
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function dish()
+    {
+        return $this->belongsTo(Dish::class);
     }
 }
