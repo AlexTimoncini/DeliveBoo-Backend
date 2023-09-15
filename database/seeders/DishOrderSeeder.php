@@ -33,10 +33,9 @@ class DishOrderSeeder extends Seeder
                     array_push($dishes, $dish);
                 }
             };
+            $order_model = Order::all()[$key];
             foreach ($dishes as  $dish) {
-                $dish_id = Dish::where('name', '=', $dish)->get()->pluck('id')[0];
-                $dish_quantity = Dish::all()->groupBy('name');
-                $order_model = Order::all()[$key];
+                $dish_id = Dish::where('name', '=', $dish)->get()->pluck('id');
                 $order_model->dishes()->attach($dish_id, ['quantity' => $dishes_quantity[$dish]]);
             }
         }           
