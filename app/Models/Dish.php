@@ -14,7 +14,7 @@ class Dish extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

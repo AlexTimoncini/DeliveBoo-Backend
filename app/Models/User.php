@@ -48,13 +48,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Type::class);
     }
 
-    public function order()
+    public function orders()
     {
         return $this->hasMany(Order::class);
     }
 
-    public function dish()
+    public function dishes()
     {
-        return $this->belongsTo(Dish::class);
+        return $this->hasMany(Dish::class);
     }
 }
