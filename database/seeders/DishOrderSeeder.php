@@ -8,6 +8,7 @@ use App\Models\Order;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
 
 class DishOrderSeeder extends Seeder
 {
@@ -25,11 +26,20 @@ class DishOrderSeeder extends Seeder
             }
         }
         foreach ($allOrders as $key => $order) {
-            foreach ($order['dish_list'] as $dish) {
+            $dishes_quantity = array_count_values($order['dish_list']);
+            $dishes = [];
+            foreach($order['dish_list'] as $dish){
+                if(!in_array($dish, $dishes)){
+                    array_push($dishes, $dish);
+                }
+            };
+            foreach ($dishes as  $dish) {
                 $dish_id = Dish::where('name', '=', $dish)->get()->pluck('id')[0];
+                $dish_quantity = Dish::all()->groupBy('name');
                 $order_model = Order::all()[$key];
-                $order_model->dishes()->attach($dish_id, ['customer_address' => $order['customer_address']]);
+                $order_model->dishes()->attach($dish_id, ['quantity' => $dishes_quantity[$dish]]);
             }
-        }
+        }           
     }
 }
+

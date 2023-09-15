@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('order_id');
             $table->Foreign('order_id')->references('id')->on('orders');
 
-            $table->string('customer_address');
+            $table->smallInteger('quantity');
         });
     }
 
