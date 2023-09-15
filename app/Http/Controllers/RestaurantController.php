@@ -27,7 +27,7 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function AdvancedSearch(String $JsonParams)
+    public function advancedSearch(String $JsonParams)
     {
         $params = json_decode($JsonParams);
         if($params){
