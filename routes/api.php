@@ -2,7 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\RestaurantController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/types', [TypeController::class, 'index']);
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/restaurants/bestSeller', [RestaurantController::class, 'bestRestaurants']);
+Route::get('/restaurants/newInTown', [RestaurantController::class, 'newInTown']);
+Route::get('/restaurants/search/{name}', [RestaurantController::class, 'search']);
+Route::get('/restaurants/search/type/{id}', [RestaurantController::class, 'searchByType']);
