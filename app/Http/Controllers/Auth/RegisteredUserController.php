@@ -49,6 +49,8 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return response()->$user;
+        Auth::login($user);
+
+        return response()->noContent();
     }
 }
