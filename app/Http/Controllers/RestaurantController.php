@@ -33,7 +33,7 @@ class RestaurantController extends Controller
         if($params){
             $searchbar = $params->searchbar;
             $typeIds = $params->type_ids;
-            $categoryId = $params->category_id;
+            $categoryIds = $params->category_ids;
     
             $query = User::query();
             if(count($typeIds) > 0){
@@ -46,10 +46,10 @@ class RestaurantController extends Controller
             if($searchbar != ''){
                 $query->where('name', 'like', $searchbar.'%');
             }
-            if(gettype($categoryId) != 'string'){
-                $query->whereHas('dishes', function ($dishQuery) use ($categoryId) {
-                    $dishQuery->where('category_id', '=', $categoryId);
-                });
+            if(count($categoryIds) > 0){
+                $query->whereHas('dishes', function ($dishQuery) use ($categoryIds) {
+                    $dishQuery->whereIn('category_id', $categoryIds);
+                }, '>=', count($categoryIds));
             }
             $restaurants = $query->get();
             return response()->json([
