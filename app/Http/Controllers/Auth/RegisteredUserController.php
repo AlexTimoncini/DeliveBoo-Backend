@@ -26,13 +26,13 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'vat_number' => ['required', 'string', 'max:11', 'unique:' . User::class],
             'address' => ['required', 'string', 'max:255', 'unique:' . User::class],
-            'closer_time' => ['required', 'date_format:H:i'],
-            'open_time' => ['required', 'date_format:H:i'],
-            'image' => ['required', 'image'],
-            'logo' => ['required', 'image'],
-            'phone' => ['required', 'numeric', 'digit:10'],
+            'closer_time' => ['required'],
+            'open_time' => ['required'],
+            'image' => ['required'],
+            'logo' => ['required'],
+            'phone' => ['required'],
+            'description' => ['required'],
         ]);
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -44,12 +44,11 @@ class RegisteredUserController extends Controller
             'image' => $request->image,
             'logo' => $request->logo,
             'phone' => $request->phone,
+            'description' => $request->description,
         ]);
 
         event(new Registered($user));
 
-        Auth::login($user);
-
-        return response()->noContent();
+        return response()->$user;
     }
 }
