@@ -24,4 +24,5 @@ Route::get('/types', [TypeController::class, 'index']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/restaurants/bestSeller', [RestaurantController::class, 'bestRestaurants']);
 Route::get('/restaurants/newInTown', [RestaurantController::class, 'newInTown']);
+Route::get('/restaurants/{id}', [RestaurantController::class, 'show']);
 Route::get('/restaurants/search/advance/{query}', [RestaurantController::class, 'advancedSearch']);

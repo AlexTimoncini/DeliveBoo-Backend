@@ -63,4 +63,12 @@ class RestaurantController extends Controller
             ]);
         }
     }
+
+    public function show(Int $id){
+        $restaurant = User::with('types', 'dishes.ingredients',)->findOrFail($id);
+        return response()->json([
+            "success" => true,
+            "data" => $restaurant
+        ]);
+    }
 }
