@@ -41,7 +41,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    protected $with = ['dishes.ingredients'];
+    protected $with = ['dishes.ingredients', 'orders.dishes'];
 
     /**
      * The attributes that should be cast.
