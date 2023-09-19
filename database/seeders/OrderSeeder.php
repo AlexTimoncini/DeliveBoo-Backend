@@ -24,6 +24,8 @@ class OrderSeeder extends Seeder
                 $newOrder = new Order();
                 $newOrder->user_id = $restaurant_id;
                 $newOrder->customer_address = $order['customer_address'];
+                $newOrder->first_name = 'Paolo';
+                $newOrder->last_name = 'Conti';
                 $newOrder->interior = 'ciao';
                 $newOrder->doorbell = 'gino';
                 $newOrder->phone = '0000000000';
