@@ -52,7 +52,18 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
-        //
+        $data =  $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'description' => ['required'],
+            'category_id' => ['required'],
+            'price' => ['required'],
+        ]);
+        $dish->update($data);
+
+        dd($data);
+        return response()->json([
+            'success' => true,
+        ]);
     }
 
     /**

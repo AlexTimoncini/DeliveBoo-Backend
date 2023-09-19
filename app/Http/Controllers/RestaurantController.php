@@ -20,7 +20,7 @@ class RestaurantController extends Controller
     public function newInTown()
     {
         $restaurants = User::whereDate('created_at', '<=', date('Y-m-d H:i:s'))
-        ->where('created_at', '>', date('Y-m-d H:i:s', strtotime("-3 days")))->get();
+            ->where('created_at', '>', date('Y-m-d H:i:s', strtotime("-3 days")))->get();
         return response()->json([
             "success" => true,
             "data" => $restaurants
@@ -30,23 +30,23 @@ class RestaurantController extends Controller
     public function advancedSearch(String $JsonParams)
     {
         $params = json_decode($JsonParams);
-        if($params){
+        if ($params) {
             $searchbar = $params->searchbar;
             $typeIds = $params->type_ids;
             $categoryIds = $params->category_ids;
-    
+
             $query = User::query();
-            if(count($typeIds) > 0){
+            if (count($typeIds) > 0) {
                 foreach ($typeIds as $typeId) {
                     $query->whereHas('types', function ($type) use ($typeId) {
                         $type->where('id', $typeId);
                     });
                 }
             }
-            if($searchbar != ''){
-                $query->where('name', 'like', $searchbar.'%');
+            if ($searchbar != '') {
+                $query->where('name', 'like', $searchbar . '%');
             }
-            if(count($categoryIds) > 0){
+            if (count($categoryIds) > 0) {
                 $query->whereHas('dishes', function ($dishQuery) use ($categoryIds) {
                     $dishQuery->whereIn('category_id', $categoryIds);
                 }, '>=', count($categoryIds));
@@ -64,7 +64,8 @@ class RestaurantController extends Controller
         }
     }
 
-    public function show(Int $id){
+    public function show(Int $id)
+    {
         $restaurant = User::with('types', 'dishes.ingredients',)->findOrFail($id);
         return response()->json([
             "success" => true,

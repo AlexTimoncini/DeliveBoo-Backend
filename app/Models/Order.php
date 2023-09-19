@@ -11,7 +11,7 @@ class Order extends Model
 
     public function dishes()
     {
-        return $this->belongsToMany(Dish::class)->withPivot('customer_address');
+        return $this->belongsToMany(Dish::class);
     }
     public function user()
     {
