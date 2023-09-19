@@ -6,6 +6,7 @@ use App\Http\Controllers\TypeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DishController;
 use App\Http\Controllers\RestaurantController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,3 +29,4 @@ Route::get('/restaurants/newInTown', [RestaurantController::class, 'newInTown'])
 Route::put('/update/{dish}', [DishController::class, 'update']);
 Route::get('/restaurants/{id}', [RestaurantController::class, 'show']);
 Route::get('/restaurants/search/advance/{query}', [RestaurantController::class, 'advancedSearch']);
+Route::get('/orders/{id}', [OrderController::class, 'show']);
