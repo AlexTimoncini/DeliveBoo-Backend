@@ -41,6 +41,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $with = ['dishes'];
+
     /**
      * The attributes that should be cast.
      *
