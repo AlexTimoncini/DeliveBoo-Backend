@@ -50,17 +50,10 @@ class DishController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Dish $dish)
+    public function update(Request $request, int $id)
     {
-        $data =  $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'description' => ['required'],
-            'category_id' => ['required'],
-            'price' => ['required'],
-        ]);
-        $dish->update($data);
-
-        dd($data);
+        $dataDish = Dish::findOrFail($id);
+        $dataDish->update($request->all());
         return response()->json([
             'success' => true,
         ]);
