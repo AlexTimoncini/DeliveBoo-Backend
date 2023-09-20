@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class UserSeeder extends Seeder
 {
@@ -27,7 +28,8 @@ class UserSeeder extends Seeder
             $newRestaurant->description = $data['description'];
             $newRestaurant->address = $data['address'];
             $newRestaurant->image = $data['image'];
-            $newRestaurant->logo = $data['logo'];
+            Storage::put('/logos'.$data['logo'], file_get_contents("database/data/restaurants_logos".$data['logo']));
+            $newRestaurant->logo = 'logos'.$data['logo'];
             $newRestaurant->closer_time = '21:00';
             $newRestaurant->open_time = '8:00';
             $newRestaurant->save();
