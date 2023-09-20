@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Dish;
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
@@ -72,4 +73,14 @@ class RestaurantController extends Controller
             "data" => $restaurant
         ]);
     }
+    
+    public function indexDishes(Int $id)
+    {
+        $dishes = Dish::with('categories', 'ingredients')->where('user_id', $id)->get();
+        return response()->json([
+            "success" => true,
+            "data" => $dishes
+        ]);
+    }
+    
 }

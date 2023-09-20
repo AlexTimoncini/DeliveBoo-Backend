@@ -40,9 +40,13 @@ class DishController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Dish $dish)
+    public function show(Int $id)
     {
-        //
+        $dish = Dish::with('ingredients', 'categories')->findOrFail($id);
+        return response()->json([
+            'success' => true,
+            'data' => $dish
+        ]);
     }
 
     /**
