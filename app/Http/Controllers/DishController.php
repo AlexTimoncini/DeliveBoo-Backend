@@ -28,8 +28,19 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'category_id' => 'required|exists:categories,id',
+            'name' => "required|min:3|max:100",
+            'description' => 'min:3',
+            'price' => 'required|numeric',
+            'photo' => 'required|url:https',
+            'available' => 'required|boolean',
+            'visible' => 'required|boolean'
+        ]);
+
         $dataDish = new Dish;
-        $dataDish->fill($request->all());
+        $dataDish->fill($data);
         $dataDish->save();
     
         return response()->json([
