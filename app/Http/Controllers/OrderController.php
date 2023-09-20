@@ -37,7 +37,9 @@ class OrderController extends Controller
     public function show(int $id)
     {
         //
-        $order = Order::with('dishes')->findOrFail($id);
+        $order = Order::with(['dishes' => function ($query) {
+            $query->withTrashed();
+        }])->findOrFail($id);
         return response()->json([
             "success" => true,
             "data" => $order
