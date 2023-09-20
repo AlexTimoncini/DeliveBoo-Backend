@@ -62,8 +62,12 @@ class DishController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Dish $dish)
+    public function delete(Request $request, int $id)
     {
-        //
+        $dataDish = Dish::findOrFail($id);
+        $dataDish->delete();
+        return response()->json([
+            'success' => true,
+        ]);
     }
 }

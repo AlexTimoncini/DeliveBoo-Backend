@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->text('photo');
             $table->boolean('available');
             $table->boolean('visible');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
