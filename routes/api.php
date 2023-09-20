@@ -28,6 +28,7 @@ Route::get('/types', [TypeController::class, 'index']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/restaurants/bestSeller', [RestaurantController::class, 'bestRestaurants']);
 Route::get('/restaurants/newInTown', [RestaurantController::class, 'newInTown']);
+Route::post('/store', [DishController::class, 'store']);
 Route::put('/update/{dish}', [DishController::class, 'update']);
 Route::delete('/delete/{dish}', [DishController::class, 'delete']);
 Route::get('/restaurants/{id}', [RestaurantController::class, 'show']);
