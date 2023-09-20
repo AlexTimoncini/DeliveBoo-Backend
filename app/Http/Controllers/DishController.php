@@ -28,7 +28,13 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataDish = new Dish;
+        $dataDish->fill($request->all());
+        $dataDish->save();
+    
+        return response()->json([
+            'success' => true,
+        ]);
     }
 
     /**
