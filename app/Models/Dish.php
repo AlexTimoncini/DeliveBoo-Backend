@@ -15,6 +15,11 @@ class Dish extends Model
         'name',
         'description',
         'price',
+        'category_id',
+        'user_id',
+        'photo',
+        'available',
+        'visible'
     ];
 
     public function categories()
