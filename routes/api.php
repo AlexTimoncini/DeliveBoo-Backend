@@ -33,6 +33,7 @@ Route::post('/store', [DishController::class, 'store']);
 Route::put('/update/{dish}', [DishController::class, 'update']);
 Route::delete('/delete/{dish}', [DishController::class, 'delete']);
 Route::get('/restaurants/{id}', [RestaurantController::class, 'show']);
+Route::put('/update/{restaurant}', [RestaurantController::class, 'update']);
 Route::get('/restaurants/{id}/dishes', [RestaurantController::class, 'indexDishes']);
 Route::get('/restaurants/search/advance/{query}', [RestaurantController::class, 'advancedSearch']);
 Route::get('/orders/{id}', [OrderController::class, 'show']);

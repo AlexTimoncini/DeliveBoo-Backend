@@ -28,7 +28,7 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function advancedSearch(String $JsonParams)
+    public function advancedSearch(string $JsonParams)
     {
         $params = json_decode($JsonParams);
         if ($params) {
@@ -65,16 +65,16 @@ class RestaurantController extends Controller
         }
     }
 
-    public function show(Int $id)
+    public function show(int $id)
     {
-        $restaurant = User::with('types', 'dishes.ingredients',)->findOrFail($id);
+        $restaurant = User::with('types', 'dishes.ingredients', )->findOrFail($id);
         return response()->json([
             "success" => true,
             "data" => $restaurant
         ]);
     }
-    
-    public function indexDishes(Int $id)
+
+    public function indexDishes(int $id)
     {
         $dishes = Dish::with('categories', 'ingredients')->where('user_id', $id)->get();
         return response()->json([
@@ -82,5 +82,14 @@ class RestaurantController extends Controller
             "data" => $dishes
         ]);
     }
-    
+
+
+    public function update(Request $request, int $id)
+    {
+        $dataRestaurant = User::findOrFail($id);
+        $dataRestaurant->update($request->all());
+        return response()->json([
+            'success' => true,
+        ]);
+    }
 }
