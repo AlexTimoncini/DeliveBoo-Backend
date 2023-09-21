@@ -74,7 +74,17 @@ class DishController extends Controller
     public function update(Request $request, int $id)
     {
         $dataDish = Dish::findOrFail($id);
-        $dataDish->update($request->all());
+        $data = $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'category_id' => 'required|exists:categories,id',
+            'name' => "required|min:3|max:100",
+            'description' => 'max:65535',
+            'price' => 'required|numeric',
+            'photo' => '',
+            'available' => 'boolean',
+            'visible' => 'boolean'
+        ]);
+        $dataDish->update($data);
         return response()->json([
             'success' => true,
         ]);
