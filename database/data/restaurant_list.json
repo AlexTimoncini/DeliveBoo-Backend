@@ -188,6 +188,85 @@
             ]
         },
         {
+            "name": "BoolBurgerz",
+            "password": "BestInTown99",
+            "email": "boolburgerz@jkds.it",
+            "vat_number": "LU13338678",
+            "phone": "+352 20 24 27 16",
+            "description": "Welcome to Boolburgerz, where sushi burgers meet the supernatural. This eerie eatery blends Gothic and Japanese styles, offering otherworldly flavors. But beware, each bite comes with haunting dreams and ghostly apparitions. Dive into the darkness at Boolburgerz.",
+            "address": "10 rue Pippo Franco",
+            "type_list": [
+                "Fast Food",
+                "Japanese"
+            ],
+            "logo": "/booldonalds.png",
+            "image": "https://www.healthyfoodcreation.fr/storage/2023/07/sushis-burger-1.jpg",
+            "dish_list": [
+                {
+                    "name": "BoolSushiBurger",
+                    "description": "You will never experience something this good, SUSHI!",
+                    "price": 7.99,
+                    "photo": "https://www.mcdonalds.it/sites/default/files/styles/compressed/public/products/cheeseburger--hero-mob.jpg.webp?itok=zUC2Hd7n",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Bread",
+                        "Fish",
+                        "Rice",
+                        "Senape"
+                    ],
+                    "category": "Burger"
+                },
+                {
+                    "name": "Water",
+                    "description": "Lilia Water Plastic Bottle",
+                    "price": 0.99,
+                    "photo": "https://www.richmonds.it/catalogo/prodotti/big_15503-levissima-acqua-naturale-12.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "water"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "BoolCoke",
+                    "description": "DRINK, DRINK DRINK!",
+                    "price": 3.99,
+                    "photo": "https://www.bresolinbevande.it/wp-content/uploads/2020/04/Bresolin-Bevande-Coca-Cola-in-Vetro-da-litro.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "water",
+                        "sugar"
+                    ],
+                    "category": "Drink"
+                }
+            ],
+            "order_list": [
+                {
+                    "dish_list": [
+                        "BoolSushiBurger",
+                        "Water",
+                        "BoolCoke"
+                    ],
+                    "customer_address": "7 Rue Auguste Collard, L-3220"
+                },
+                {
+                    "dish_list": [
+                        "BoolSushiBurger",
+                        "BoolSushiBurger",
+                        "Water"
+                    ],
+                    "customer_address": "9 Rue Auguste Comte, L-3090"
+                },
+                {
+                    "dish_list": [
+                        "BoolSushiBurger",
+                        "BoolCoke"
+                    ],
+                    "customer_address": "16 Rue Auguste Comte, L-3090"
+                }
+            ]
+        },
+        {
             "name": "Pizzeria da 'Gino",
             "password": "GinoVaInCampagna00",
             "email": "PizzeriaDaGino@gmail.com",
