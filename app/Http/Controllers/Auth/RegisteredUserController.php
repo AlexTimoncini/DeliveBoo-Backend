@@ -28,8 +28,6 @@ class RegisteredUserController extends Controller
             'address' => ['required', 'string', 'max:255', 'unique:' . User::class],
             'closer_time' => ['required'],
             'open_time' => ['required'],
-            'image' => ['required'],
-            'logo' => ['required'],
             'phone' => ['required'],
             'description' => ['required'],
         ]);
@@ -41,8 +39,6 @@ class RegisteredUserController extends Controller
             'address' => $request->address,
             'closer_time' => $request->closer_time,
             'open_time' => $request->open_time,
-            'image' => $request->image,
-            'logo' => $request->logo,
             'phone' => $request->phone,
             'description' => $request->description,
         ]);

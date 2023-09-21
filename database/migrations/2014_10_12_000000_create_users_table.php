@@ -22,8 +22,8 @@ return new class extends Migration
             $table->time('closer_time');
             $table->time('open_time');
             $table->string('free_delivery_from')->nullable();
-            $table->text('logo');
-            $table->text('image');
+            $table->text('logo')->nullable();
+            $table->text('image')->nullable();
             $table->string('phone')->unique();
             $table->text('description');
             $table->rememberToken();
