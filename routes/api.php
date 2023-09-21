@@ -37,4 +37,6 @@ Route::put('/update/{restaurant}', [RestaurantController::class, 'update']);
 Route::get('/restaurants/{id}/dishes', [RestaurantController::class, 'indexDishes']);
 Route::get('/restaurants/search/advance/{query}', [RestaurantController::class, 'advancedSearch']);
 Route::get('/orders/{id}', [OrderController::class, 'show']);
+Route::get('/dish/{id}', [ImagesController::class, 'showDishes']);
 Route::get('/restaurants/logo/{id}', [ImagesController::class, 'show']);
+Route::post('/upload/File/{id}', [DishController::class, 'upload']);

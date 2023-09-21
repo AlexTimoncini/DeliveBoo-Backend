@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dish;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -42,7 +43,7 @@ class DishController extends Controller
         $dataDish = new Dish;
         $dataDish->fill($data);
         $dataDish->save();
-    
+
         return response()->json([
             'success' => true,
         ]);
@@ -68,11 +69,33 @@ class DishController extends Controller
         //
     }
 
+    public function upload(Request $request, Int $id)
+    {
+        $dataDish = Dish::findOrFail($id);
+        if ($request->hasFile('files')) {
+            $nameFile =  Storage::put('/dish', $request['files'][0]);
+            $dataDish->update(
+                [
+                    $dataDish->photo = '/dish/' . pathinfo($nameFile, PATHINFO_FILENAME) . '.' . pathinfo($nameFile, PATHINFO_EXTENSION),
+                ]
+            );
+            return response()->json([
+                'success' => true,
+                'status' => true,
+            ]);
+        }
+        return response()->json([
+            'messageError' => 'The field is must be a file',
+            'status' => false,
+        ]);
+    }
+
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, int $id)
     {
+
         $dataDish = Dish::findOrFail($id);
         $data = $request->validate([
             'user_id' => 'required|exists:users,id',
@@ -80,14 +103,10 @@ class DishController extends Controller
             'name' => "required|min:3|max:100",
             'description' => 'max:65535',
             'price' => 'required|numeric',
-            'photo' => '',
             'available' => 'boolean',
             'visible' => 'boolean'
         ]);
         $dataDish->update($data);
-        return response()->json([
-            'success' => true,
-        ]);
     }
 
     /**
