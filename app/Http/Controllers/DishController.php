@@ -83,6 +83,12 @@ class DishController extends Controller
                 'success' => true,
                 'status' => true,
             ]);
+        } else if (is_null($request)){
+            return response()->json([
+                'success' => 'true',
+                'status' => true,
+                'message' => 'File not modified :D'
+            ]);
         }
         return response()->json([
             'messageError' => 'The field is must be a file',
