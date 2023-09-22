@@ -150,6 +150,22 @@ class RestaurantController extends Controller
         ]);
     }
 
+    public function deleteAccount(int $id)
+    {
+        $restaurant = User::findOrFail($id);
+        Storage::delete($restaurant->image);
+        Storage::delete($restaurant->logo);
+        $restaurant->delete();
+        if ($restaurant) {
+            return response()->json([
+                'success' => 'Account eliminato con successo',
+            ]);
+        }
+        return response()->json([
+            'success' => 'Account non eliminato con successo',
+        ]);
+    }
+
     public function rankingEver(int $id)
     {
         $restaurant = User::find($id);
@@ -162,24 +178,24 @@ class RestaurantController extends Controller
         }
 
         $totalAmount = $restaurant->orders()
-        ->where('successful', '1')
-        ->sum('total_price');
+            ->where('successful', '1')
+            ->sum('total_price');
 
 
 
-        if($totalAmount !== 0){
+        if ($totalAmount !== 0) {
 
             $ranking = User::selectRaw('user_id, SUM(total_price) as total_price')
-            ->join('orders', 'users.id', '=', 'orders.user_id')
-            ->where('successful', '1')
-            ->groupBy('user_id')
-            ->orderByDesc('total_price')
-            ->get()
-            ->search(function ($item) use ($id) {
-                return $item->user_id == $id;
-            });
-        
-            
+                ->join('orders', 'users.id', '=', 'orders.user_id')
+                ->where('successful', '1')
+                ->groupBy('user_id')
+                ->orderByDesc('total_price')
+                ->get()
+                ->search(function ($item) use ($id) {
+                    return $item->user_id == $id;
+                });
+
+
             return response()->json([
                 'success' => true,
                 'data' => [
@@ -197,18 +213,18 @@ class RestaurantController extends Controller
     }
 
     public function bestRestaurantEver()
-    {        
+    {
         $winner = User::with('orders')
-        ->whereHas('orders', function ($query) {
-            $query->where('successful', '1');
-        })
-        ->get()
-        ->sortByDesc(function ($winner) {
-            return $winner->orders
-                ->where('successful', '1')
-                ->sum('total_price');
-        })
-        ->first();
+            ->whereHas('orders', function ($query) {
+                $query->where('successful', '1');
+            })
+            ->get()
+            ->sortByDesc(function ($winner) {
+                return $winner->orders
+                    ->where('successful', '1')
+                    ->sum('total_price');
+            })
+            ->first();
         return response()->json([
             'success' => true,
             'data' => [
