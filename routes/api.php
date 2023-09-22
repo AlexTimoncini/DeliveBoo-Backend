@@ -39,7 +39,7 @@ Route::get('/restaurants/{id}/dishes', [RestaurantController::class, 'indexDishe
 Route::get('/restaurants/search/advance/{query}', [RestaurantController::class, 'advancedSearch']);
 Route::post('/upload/restaurants/logo/File/{id}', [RestaurantController::class, 'uploadLogo']);
 Route::post('/upload/restaurants/image/File/{id}', [RestaurantController::class, 'uploadImage']);
-Route::delete('delete/restaurant/{id}' , [RestaurantController::class , 'deleteAccount'])
+Route::delete('delete/restaurant/{id}', [RestaurantController::class, 'deleteAccount']);
 
 Route::post('/store', [DishController::class, 'store']);
 Route::put('/update/{dish}', [DishController::class, 'update']);
