@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Dish;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
@@ -67,7 +68,7 @@ class RestaurantController extends Controller
 
     public function show(int $id)
     {
-        $restaurant = User::with('types', 'dishes.ingredients', )->findOrFail($id);
+        $restaurant = User::with('types', 'dishes.ingredients',)->findOrFail($id);
         return response()->json([
             "success" => true,
             "data" => $restaurant
@@ -80,6 +81,62 @@ class RestaurantController extends Controller
         return response()->json([
             "success" => true,
             "data" => $dishes
+        ]);
+    }
+
+    public function uploadLogo(Request $request, Int $id)
+    {
+        $restaurant = User::findOrFail($id);
+        if ($request->hasFile('files')) {
+            $nameFile =  Storage::put('/logos', $request['files'][0]);
+            $restaurant
+                ->update(
+                    [
+                        $restaurant->logo = '/logos/' . pathinfo($nameFile, PATHINFO_FILENAME) . '.' . pathinfo($nameFile, PATHINFO_EXTENSION),
+                    ]
+                );
+            return response()->json([
+                'success' => true,
+                'status' => true,
+            ]);
+        } else if (is_null($request)) {
+            return response()->json([
+                'success' => 'true',
+                'status' => true,
+                'message' => 'File not modified :D'
+            ]);
+        }
+        return response()->json([
+            'messageError' => 'The field is must be a file',
+            'status' => false,
+        ]);
+    }
+
+    public function uploadImage(Request $request, Int $id)
+    {
+        $restaurant = User::findOrFail($id);
+        if ($request->hasFile('files')) {
+            $nameFile =  Storage::put('/restaurants', $request['files'][0]);
+            $restaurant
+                ->update(
+                    [
+                        $restaurant->image = '/restaurants/' . pathinfo($nameFile, PATHINFO_FILENAME) . '.' . pathinfo($nameFile, PATHINFO_EXTENSION),
+                    ]
+                );
+            return response()->json([
+                'success' => true,
+                'status' => true,
+            ]);
+        } else if (is_null($request)) {
+            return response()->json([
+                'success' => 'true',
+                'status' => true,
+                'message' => 'File not modified :D'
+            ]);
+        }
+        return response()->json([
+            'messageError' => 'The field is must be a file',
+            'status' => false,
         ]);
     }
 
