@@ -33,6 +33,7 @@ Route::get('/restaurants/newInTown', [RestaurantController::class, 'newInTown'])
 Route::get('/restaurants/{id}/ranking', [RestaurantController::class, 'rankingEver']);
 Route::get('/restaurants/{id}/monthranking', [RestaurantController::class, 'rankingMonth']);
 Route::get('/restaurants/winner', [RestaurantController::class, 'bestRestaurantEver']);        
+Route::get('/restaurants/winnerMonth', [RestaurantController::class, 'bestRestaurantMonth']);        
 Route::get('/restaurants/{id}/bestcustomer', [RestaurantController::class, 'bestCustomer']);
 
 Route::get('/restaurants/logo/{id}', [ImagesController::class, 'show']);

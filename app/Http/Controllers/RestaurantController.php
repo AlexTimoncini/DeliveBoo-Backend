@@ -7,13 +7,22 @@ use App\Models\Dish;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Carbon;
 
 class RestaurantController extends Controller
 {
     /**Da modificare qunado avremo implementato le statische per mandare solo i migliori**/
     public function bestRestaurants()
     {
-        $restaurants = User::where('id', '<', 9)->get();
+        $restaurants = User::select('users.*')
+        ->selectRaw('SUM(orders.total_price) as total_spent')
+        ->join('orders', 'users.id', '=', 'orders.user_id')
+        ->where('orders.successful', 1)
+        ->groupBy('users.id')
+        ->orderByDesc('total_spent')
+        ->limit(4)
+        ->get();
+
         return response()->json([
             "success" => true,
             "data" => $restaurants
@@ -280,6 +289,32 @@ class RestaurantController extends Controller
                 'message' => 'Il ristorante non ha ordini di successo con importo maggiore di zero nel mese corrente.',
             ]);
         }
+    }
+
+    public function bestRestaurantMonth()
+    {
+        $currentMonth = Carbon::now()->startOfMonth();
+        $endOfMonth = Carbon::now()->endOfMonth();
+
+        $winner = User::with('orders')
+            ->whereHas('orders', function ($query) use($currentMonth, $endOfMonth) {
+                $query
+                ->where('successful', '1')
+                ->whereBetween('orders.created_at', [$currentMonth, $endOfMonth]);
+            })
+            ->get()
+            ->sortByDesc(function ($winner) {
+                return $winner->orders
+                    ->where('successful', '1')
+                    ->sum('total_price');
+            })
+            ->first();
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'firstPlace' => $winner
+            ],
+        ]);
     }
 
     public function bestCustomer(Int $id)
