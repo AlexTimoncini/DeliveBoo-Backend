@@ -217,7 +217,7 @@
                     "category": "Sushi"
                 },
                 {
-                    "name": "Water",
+                    "name": "Water Lilia",
                     "description": "Lilia Water Plastic Bottle",
                     "price": 0.99,
                     "photo": "https://www.richmonds.it/catalogo/prodotti/big_15503-levissima-acqua-naturale-12.jpg",
@@ -228,7 +228,7 @@
                     "category": "Drink"
                 },
                 {
-                    "name": "BoolCoke",
+                    "name": "BoolCola",
                     "description": "DRINK, DRINK DRINK!",
                     "price": 3.99,
                     "photo": "https://www.bresolinbevande.it/wp-content/uploads/2020/04/Bresolin-Bevande-Coca-Cola-in-Vetro-da-litro.jpg",
@@ -244,8 +244,8 @@
                 {
                     "dish_list": [
                         "BoolSushiBurger",
-                        "Water",
-                        "BoolCoke"
+                        "Water Lilia",
+                        "BoolCola"
                     ],
                     "customer_address": "7 Rue Auguste Collard, L-3220"
                 },
@@ -253,14 +253,14 @@
                     "dish_list": [
                         "BoolSushiBurger",
                         "BoolSushiBurger",
-                        "Water"
+                        "Water Lilia"
                     ],
                     "customer_address": "9 Rue Auguste Comte, L-3090"
                 },
                 {
                     "dish_list": [
                         "BoolSushiBurger",
-                        "BoolCoke"
+                        "BoolCola"
                     ],
                     "customer_address": "16 Rue Auguste Comte, L-3090"
                 }
