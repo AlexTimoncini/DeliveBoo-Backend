@@ -149,4 +149,71 @@ class RestaurantController extends Controller
             'success' => true,
         ]);
     }
+
+    public function rankingEver(int $id)
+    {
+        $restaurant = User::find($id);
+
+        if (!$restaurant) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Ristorante non trovato',
+            ]);
+        }
+
+        $totalAmount = $restaurant->orders()
+        ->where('successful', '1')
+        ->sum('total_price');
+
+
+
+        if($totalAmount !== 0){
+
+            $ranking = User::selectRaw('user_id, SUM(total_price) as total_price')
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->where('successful', '1')
+            ->groupBy('user_id')
+            ->orderByDesc('total_price')
+            ->get()
+            ->search(function ($item) use ($id) {
+                return $item->user_id == $id;
+            });
+        
+            
+            return response()->json([
+                'success' => true,
+                'data' => [
+                    'total_price' => $totalAmount,
+                    'ranking' => $ranking + 1,
+                    'name' => $restaurant->name,
+                ],
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Il ristorante non ha ordini di successo con importo maggiore di zero.',
+            ]);
+        }
+    }
+
+    public function bestRestaurantEver()
+    {        
+        $winner = User::with('orders')
+        ->whereHas('orders', function ($query) {
+            $query->where('successful', '1');
+        })
+        ->get()
+        ->sortByDesc(function ($winner) {
+            return $winner->orders
+                ->where('successful', '1')
+                ->sum('total_price');
+        })
+        ->first();
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'firstPlace' => $winner
+            ],
+        ]);
+    }
 }
