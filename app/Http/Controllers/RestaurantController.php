@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Dish;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -166,6 +167,8 @@ class RestaurantController extends Controller
         ]);
     }
 
+    //Analytics
+
     public function rankingEver(int $id)
     {
         $restaurant = User::find($id);
@@ -229,6 +232,78 @@ class RestaurantController extends Controller
             'success' => true,
             'data' => [
                 'firstPlace' => $winner
+            ],
+        ]);
+    }
+
+    public function rankingMonth(int $id)
+    {
+        $restaurant = User::findOrFail($id);
+    
+        if (!$restaurant) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Ristorante non trovato',
+            ]);
+        }
+    
+        $currentMonth = Carbon::now()->startOfMonth();
+        $endOfMonth = Carbon::now()->endOfMonth();
+    
+        $totalAmount = $restaurant->orders()
+            ->where('successful', '1')
+            ->whereBetween('orders.created_at', [$currentMonth, $endOfMonth])
+            ->sum('total_price');
+    
+        if ($totalAmount !== 0) {
+            $ranking = User::selectRaw('user_id, SUM(total_price) as total_price')
+                ->join('orders', 'users.id', '=', 'orders.user_id')
+                ->where('successful', '1')
+                ->whereBetween('orders.created_at', [$currentMonth, $endOfMonth])
+                ->groupBy('user_id')
+                ->orderByDesc('total_price')
+                ->get()
+                ->search(function ($item) use ($id) {
+                    return $item->user_id == $id;
+                });
+            return response()->json([
+                'success' => true,
+                'data' => [
+                    'total_price' => $totalAmount,
+                    'ranking' => $ranking + 1,
+                    'name' => $restaurant->name,
+                ],
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Il ristorante non ha ordini di successo con importo maggiore di zero nel mese corrente.',
+            ]);
+        }
+    }
+
+    public function bestCustomer(Int $id)
+    {
+        $customer = Order::selectRaw('CONCAT(first_name, " ", last_name) as customer_name')
+        ->selectRaw('SUM(total_price) as total_spent')
+        ->where('user_id', $id)
+        ->where('successful', 1)
+        ->groupBy('customer_name')
+        ->orderByDesc('total_spent')
+        ->first();
+
+        if (!$customer) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Nessun cliente trovato per il ristorante specificato.',
+            ]);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'customer_name' => $customer->customer_name,
+                'total_spent' => $customer->total_spent,
             ],
         ]);
     }

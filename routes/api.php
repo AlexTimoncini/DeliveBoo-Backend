@@ -29,9 +29,12 @@ Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::get('/restaurants/bestSeller', [RestaurantController::class, 'bestRestaurants']);
 Route::get('/restaurants/newInTown', [RestaurantController::class, 'newInTown']);
+
 Route::get('/restaurants/{id}/ranking', [RestaurantController::class, 'rankingEver']);
 Route::get('/restaurants/{id}/monthranking', [RestaurantController::class, 'rankingMonth']);
-Route::get('/restaurants/winner', [RestaurantController::class, 'bestRestaurantEver']);
+Route::get('/restaurants/winner', [RestaurantController::class, 'bestRestaurantEver']);        
+Route::get('/restaurants/{id}/bestcustomer', [RestaurantController::class, 'bestCustomer']);
+
 Route::get('/restaurants/logo/{id}', [ImagesController::class, 'show']);
 Route::get('/restaurants/{id}', [RestaurantController::class, 'show']);
 Route::put('/update/restaurant/{restaurant}', [RestaurantController::class, 'update']);
