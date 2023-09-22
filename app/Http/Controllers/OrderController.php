@@ -38,7 +38,7 @@ class OrderController extends Controller
     {
         //
         $order = Order::with(['dishes' => function ($query) {
-            $query->withTrashed();
+            $query->withTrashed()->withPivot('quantity');;
         }])->findOrFail($id);
         return response()->json([
             "success" => true,
