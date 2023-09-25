@@ -4,8 +4,57 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "332fd21fe2320c26a7e6b6a29164edb3",
+    "content-hash": "d740b841a69a0246cb157017c851259b",
     "packages": [
+        {
+            "name": "braintree/braintree_php",
+            "version": "6.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/braintree/braintree_php.git",
+                "reference": "c7bdef50c9692f1f9f9bf982e452aec0d137f5ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/braintree/braintree_php/zipball/c7bdef50c9692f1f9f9bf982e452aec0d137f5ec",
+                "reference": "c7bdef50c9692f1f9f9bf982e452aec0d137f5ec",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-dom": "*",
+                "ext-hash": "*",
+                "ext-openssl": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=7.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Braintree\\": "lib/Braintree"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Braintree",
+                    "homepage": "https://www.braintreepayments.com"
+                }
+            ],
+            "description": "Braintree PHP Client Library",
+            "support": {
+                "issues": "https://github.com/braintree/braintree_php/issues",
+                "source": "https://github.com/braintree/braintree_php/tree/6.13.0"
+            },
+            "time": "2023-08-30T21:46:13+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.11.0",

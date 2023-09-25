@@ -2,17 +2,58 @@
 
 namespace App\Http\Controllers;
 
+use Braintree\Gateway;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function generate(Request $request, Gateway $gateway)
     {
-        //
+        $token = $gateway->clientToken()->generate();
+        $data = [
+            'success' => true,
+            'token' => $token
+        ];
+
+        return response()->json($data, 200);
+    }
+    public function makePayment(Request $request, Gateway $gateway)
+    {
+        $newOrder = new Order();
+        $newOrder->customer_address = $request->address;
+        $newOrder->user_id = $request->cart[0]['user_id'];
+        $newOrder->first_name = $request->name;
+        $newOrder->last_name = $request->surname;
+        $newOrder->doorbell = $request->name . ' ' . $request->surname;
+        $newOrder->phone = $request->telephone;
+        $newOrder->total_price = $request->totalPrice;
+        $newOrder->interior = 'A';
+        $result = $gateway->transaction()->sale([
+            'amount' => $request->totalPrice,
+            'paymentMethodNonce' => $request->nonce,
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
+
+        if ($result->success) {
+            $data = [
+                'success' => true,
+                'message' => "Transazione eseguita con Successo!"
+            ];
+            $newOrder->successful = true;
+            $newOrder->save();
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                'success' => false,
+                'message' => "Transazione Fallita!!"
+            ];
+            $newOrder->successful = false;
+            $newOrder->save();
+            return response()->json($data, 401);
+        }
     }
 
     /**

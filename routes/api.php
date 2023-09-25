@@ -24,16 +24,20 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/orders/token', [OrderController::class, 'generate']);
+Route::post('/orders/payment', [OrderController::class, 'makePayment']);
+
 Route::get('/types', [TypeController::class, 'index']);
 Route::get('/categories', [CategoryController::class, 'index']);
+
 
 Route::get('/restaurants/bestSeller', [RestaurantController::class, 'bestRestaurants']);
 Route::get('/restaurants/newInTown', [RestaurantController::class, 'newInTown']);
 
 Route::get('/restaurants/{id}/ranking', [RestaurantController::class, 'rankingEver']);
 Route::get('/restaurants/{id}/monthranking', [RestaurantController::class, 'rankingMonth']);
-Route::get('/restaurants/winner', [RestaurantController::class, 'bestRestaurantEver']);        
-Route::get('/restaurants/winnerMonth', [RestaurantController::class, 'bestRestaurantMonth']);        
+Route::get('/restaurants/winner', [RestaurantController::class, 'bestRestaurantEver']);
+Route::get('/restaurants/winnerMonth', [RestaurantController::class, 'bestRestaurantMonth']);
 Route::get('/restaurants/{id}/bestcustomer', [RestaurantController::class, 'bestCustomer']);
 
 Route::get('/restaurants/logo/{id}', [ImagesController::class, 'show']);
