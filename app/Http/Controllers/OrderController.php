@@ -20,6 +20,7 @@ class OrderController extends Controller
     }
     public function makePayment(Request $request, Gateway $gateway)
     {
+
         $newOrder = new Order();
         $newOrder->customer_address = $request->address;
         $newOrder->user_id = $request->cart[0]['user_id'];
@@ -44,6 +45,10 @@ class OrderController extends Controller
             ];
             $newOrder->successful = true;
             $newOrder->save();
+            foreach ($request->cart as  $dish) {
+                $newOrder->dishes()->attach($dish['id'], ['quantity' => $dish['quantity']]);
+            }
+            $newOrder->save();
             return response()->json($data, 200);
         } else {
             $data = [
@@ -51,6 +56,10 @@ class OrderController extends Controller
                 'message' => "Transazione Fallita!!"
             ];
             $newOrder->successful = false;
+            $newOrder->save();
+            foreach ($request->cart as  $dish) {
+                $newOrder->dishes()->attach($dish['id'], ['quantity' => $dish['quantity']]);
+            }
             $newOrder->save();
             return response()->json($data, 401);
         }
