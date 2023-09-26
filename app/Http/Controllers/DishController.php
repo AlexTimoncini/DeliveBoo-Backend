@@ -35,17 +35,23 @@ class DishController extends Controller
             'name' => "required|min:3|max:100",
             'description' => 'min:3',
             'price' => 'required|numeric',
-            'photo' => 'required|url:https',
             'available' => 'required|boolean',
-            'visible' => 'required|boolean'
+            'visible' => 'required|boolean',
+            'photo' => 'required'
         ]);
 
         $dataDish = new Dish;
         $dataDish->fill($data);
         $dataDish->save();
-
+        $createdDishId = Dish::where('name', $data['name'])
+        ->where('user_id', $data['user_id'])
+        ->where('price', $data['price'])
+        ->where('description', $data['description'])
+        ->where('category_id', $data['category_id'])
+        ->get()->pluck('id');
         return response()->json([
             'success' => true,
+            'idCreated' => $createdDishId
         ]);
     }
 
