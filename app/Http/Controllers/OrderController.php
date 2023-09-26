@@ -21,13 +21,20 @@ class OrderController extends Controller
     public function makePayment(Request $request, Gateway $gateway)
     {
 
+        $data =  $request->validate([
+            'name' => ['required', 'string', 'max:255', 'min:3'],
+            'email' => ['required', 'string', 'email', 'max:255', 'min:3'],
+            'address' => ['required', 'string', 'max:255', 'min:3'],
+            'telephone' => ['required']
+        ]);
+
         $newOrder = new Order();
-        $newOrder->customer_address = $request->address;
+        $newOrder->customer_address = $data['address'];
         $newOrder->user_id = $request->cart[0]['user_id'];
-        $newOrder->first_name = $request->name;
-        $newOrder->last_name = $request->surname;
-        $newOrder->doorbell = $request->name . ' ' . $request->surname;
-        $newOrder->phone = $request->telephone;
+        $newOrder->first_name = $data['name'];
+        $newOrder->last_name = $data['surname'];
+        $newOrder->doorbell = $data['name'] . ' ' . $data['surname'];
+        $newOrder->phone = $data['telephone'];
         $newOrder->total_price = $request->totalPrice;
         $newOrder->interior = 'A';
         $result = $gateway->transaction()->sale([
@@ -89,8 +96,7 @@ class OrderController extends Controller
         //
         $order = Order::with([
             'dishes' => function ($query) {
-                $query->withTrashed()->withPivot('quantity');
-                ;
+                $query->withTrashed()->withPivot('quantity');;
             }
         ])->findOrFail($id);
         return response()->json([
@@ -102,7 +108,7 @@ class OrderController extends Controller
     public function index(Int $id)
     {
         $orders = Order::where('user_id', $id)->paginate(8);
-        $ordersAll = Order::where('user_id', $id)->get();  
+        $ordersAll = Order::where('user_id', $id)->get();
         return response()
             ->json([
                 'success' => true,
