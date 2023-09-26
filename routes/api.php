@@ -29,7 +29,7 @@ Route::post('/orders/payment', [OrderController::class, 'makePayment']);
 
 Route::get('/types', [TypeController::class, 'index']);
 Route::get('/categories', [CategoryController::class, 'index']);
-Route::get('/orders', [OrderController::class, 'index']);
+Route::get('/orders/index/{id}', [OrderController::class, 'index']);
 
 
 Route::get('/restaurants/bestSeller', [RestaurantController::class, 'bestRestaurants']);

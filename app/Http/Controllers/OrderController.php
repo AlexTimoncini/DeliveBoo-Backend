@@ -99,13 +99,13 @@ class OrderController extends Controller
         ]);
     }
 
-    public function index(Order $order)
+    public function index(Int $id)
     {
-        //
+        $orders = Order::where('user_id', $id)->paginate(8);        
         return response()
             ->json([
                 'success' => true,
-                'results' => $order->paginate(8),
+                'results' => $orders,
             ]);
     }
 
