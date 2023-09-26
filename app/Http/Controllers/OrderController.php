@@ -105,7 +105,7 @@ class OrderController extends Controller
         return response()
             ->json([
                 'success' => true,
-                'results' => $order->paginate(15),
+                'results' => $order->paginate(8),
             ]);
     }
 
