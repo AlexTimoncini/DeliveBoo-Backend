@@ -101,11 +101,13 @@ class OrderController extends Controller
 
     public function index(Int $id)
     {
-        $orders = Order::where('user_id', $id)->paginate(8);        
+        $orders = Order::where('user_id', $id)->paginate(8);
+        $ordersAll = Order::where('user_id', $id)->get();  
         return response()
             ->json([
                 'success' => true,
                 'results' => $orders,
+                'array_length' => count($ordersAll)
             ]);
     }
 
