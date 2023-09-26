@@ -45,7 +45,7 @@ class OrderController extends Controller
             ];
             $newOrder->successful = true;
             $newOrder->save();
-            foreach ($request->cart as  $dish) {
+            foreach ($request->cart as $dish) {
                 $newOrder->dishes()->attach($dish['id'], ['quantity' => $dish['quantity']]);
             }
             $newOrder->save();
@@ -57,7 +57,7 @@ class OrderController extends Controller
             ];
             $newOrder->successful = false;
             $newOrder->save();
-            foreach ($request->cart as  $dish) {
+            foreach ($request->cart as $dish) {
                 $newOrder->dishes()->attach($dish['id'], ['quantity' => $dish['quantity']]);
             }
             $newOrder->save();
@@ -87,13 +87,26 @@ class OrderController extends Controller
     public function show(int $id)
     {
         //
-        $order = Order::with(['dishes' => function ($query) {
-            $query->withTrashed()->withPivot('quantity');;
-        }])->findOrFail($id);
+        $order = Order::with([
+            'dishes' => function ($query) {
+                $query->withTrashed()->withPivot('quantity');
+                ;
+            }
+        ])->findOrFail($id);
         return response()->json([
             "success" => true,
             "data" => $order
         ]);
+    }
+
+    public function index(Order $order)
+    {
+        //
+        return response()
+            ->json([
+                'success' => true,
+                'results' => $order->paginate(15),
+            ]);
     }
 
     /**

@@ -29,6 +29,7 @@ Route::post('/orders/payment', [OrderController::class, 'makePayment']);
 
 Route::get('/types', [TypeController::class, 'index']);
 Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/orders', [OrderController::class, 'index']);
 
 
 Route::get('/restaurants/bestSeller', [RestaurantController::class, 'bestRestaurants']);
@@ -55,5 +56,4 @@ Route::delete('/delete/{dish}', [DishController::class, 'delete']);
 Route::get('/orders/{id}', [OrderController::class, 'show']);
 Route::post('/upload/File/{id}', [DishController::class, 'upload']);
 Route::get('/dishes/{id}', [DishController::class, 'show']);
-
 Route::get('/dish/{id}', [ImagesController::class, 'showDishes']);
