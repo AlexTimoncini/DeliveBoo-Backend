@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DishController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ImagesController;
@@ -23,6 +24,8 @@ use App\Http\Controllers\ImagesController;
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/contact-us', [ContactController::class, 'sendEmail']);
 
 Route::get('/orders/token', [OrderController::class, 'generate']);
 Route::post('/orders/payment', [OrderController::class, 'makePayment']);
