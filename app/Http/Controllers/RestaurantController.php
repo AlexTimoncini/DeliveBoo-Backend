@@ -15,13 +15,13 @@ class RestaurantController extends Controller
     public function bestRestaurants()
     {
         $restaurants = User::select('users.*')
-        ->selectRaw('SUM(orders.total_price) as total_spent')
-        ->join('orders', 'users.id', '=', 'orders.user_id')
-        ->where('orders.successful', 1)
-        ->groupBy('users.id')
-        ->orderByDesc('total_spent')
-        ->limit(4)
-        ->get();
+            ->selectRaw('SUM(orders.total_price) as total_spent')
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->where('orders.successful', 1)
+            ->groupBy('users.id')
+            ->orderByDesc('total_spent')
+            ->limit(4)
+            ->get();
 
         return response()->json([
             "success" => true,
@@ -78,7 +78,7 @@ class RestaurantController extends Controller
 
     public function show(int $id)
     {
-        $restaurant = User::with('types', 'dishes.ingredients',)->findOrFail($id);
+        $restaurant = User::with('types', 'dishes.ingredients', )->findOrFail($id);
         return response()->json([
             "success" => true,
             "data" => $restaurant
@@ -94,11 +94,11 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function uploadLogo(Request $request, Int $id)
+    public function uploadLogo(Request $request, int $id)
     {
         $restaurant = User::findOrFail($id);
         if ($request->hasFile('files')) {
-            $nameFile =  Storage::put('/logos', $request['files'][0]);
+            $nameFile = Storage::put('/logos', $request['files'][0]);
             $restaurant
                 ->update(
                     [
@@ -122,11 +122,11 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function uploadImage(Request $request, Int $id)
+    public function uploadImage(Request $request, int $id)
     {
         $restaurant = User::findOrFail($id);
         if ($request->hasFile('files')) {
-            $nameFile =  Storage::put('/restaurants', $request['files'][0]);
+            $nameFile = Storage::put('/restaurants', $request['files'][0]);
             $restaurant
                 ->update(
                     [
@@ -177,6 +177,31 @@ class RestaurantController extends Controller
     }
 
     //Analytics
+
+    public function bestOrders(int $id)
+    {
+        $restaurant = User::find($id);
+
+        if (!$restaurant) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Ristorante non trovato',
+            ]);
+        }
+
+        $bestOrders = Order::where('user_id', $id)
+            ->orderByDesc('total_price')
+            ->paginate(5)
+        ;
+        // 
+
+
+        return response()->json([
+            'success' => true,
+            'results' => $bestOrders,
+        ]);
+
+    }
 
     public function rankingEver(int $id)
     {
@@ -248,22 +273,22 @@ class RestaurantController extends Controller
     public function rankingMonth(int $id)
     {
         $restaurant = User::findOrFail($id);
-    
+
         if (!$restaurant) {
             return response()->json([
                 'success' => false,
                 'message' => 'Ristorante non trovato',
             ]);
         }
-    
+
         $currentMonth = Carbon::now()->startOfMonth();
         $endOfMonth = Carbon::now()->endOfMonth();
-    
+
         $totalAmount = $restaurant->orders()
             ->where('successful', '1')
             ->whereBetween('orders.created_at', [$currentMonth, $endOfMonth])
             ->sum('total_price');
-    
+
         if ($totalAmount !== 0) {
             $ranking = User::selectRaw('user_id, SUM(total_price) as total_price')
                 ->join('orders', 'users.id', '=', 'orders.user_id')
@@ -297,10 +322,10 @@ class RestaurantController extends Controller
         $endOfMonth = Carbon::now()->endOfMonth();
 
         $winner = User::with('orders')
-            ->whereHas('orders', function ($query) use($currentMonth, $endOfMonth) {
+            ->whereHas('orders', function ($query) use ($currentMonth, $endOfMonth) {
                 $query
-                ->where('successful', '1')
-                ->whereBetween('orders.created_at', [$currentMonth, $endOfMonth]);
+                    ->where('successful', '1')
+                    ->whereBetween('orders.created_at', [$currentMonth, $endOfMonth]);
             })
             ->get()
             ->sortByDesc(function ($winner) {
@@ -317,15 +342,15 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function bestCustomer(Int $id)
+    public function bestCustomer(int $id)
     {
         $customer = Order::selectRaw('CONCAT(first_name, " ", last_name) as customer_name')
-        ->selectRaw('SUM(total_price) as total_spent')
-        ->where('user_id', $id)
-        ->where('successful', 1)
-        ->groupBy('customer_name')
-        ->orderByDesc('total_spent')
-        ->first();
+            ->selectRaw('SUM(total_price) as total_spent')
+            ->where('user_id', $id)
+            ->where('successful', 1)
+            ->groupBy('customer_name')
+            ->orderByDesc('total_spent')
+            ->first();
 
         if (!$customer) {
             return response()->json([

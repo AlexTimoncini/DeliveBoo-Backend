@@ -38,11 +38,13 @@ Route::get('/orders/index/{id}', [OrderController::class, 'index']);
 Route::get('/restaurants/bestSeller', [RestaurantController::class, 'bestRestaurants']);
 Route::get('/restaurants/newInTown', [RestaurantController::class, 'newInTown']);
 
+// Analytics
 Route::get('/restaurants/{id}/ranking', [RestaurantController::class, 'rankingEver']);
 Route::get('/restaurants/{id}/monthranking', [RestaurantController::class, 'rankingMonth']);
 Route::get('/restaurants/winner', [RestaurantController::class, 'bestRestaurantEver']);
 Route::get('/restaurants/winnerMonth', [RestaurantController::class, 'bestRestaurantMonth']);
 Route::get('/restaurants/{id}/bestcustomer', [RestaurantController::class, 'bestCustomer']);
+Route::get('/restaurants/{id}/bestOrders', [RestaurantController::class, 'bestOrders']);
 
 Route::get('/restaurants/logo/{id}', [ImagesController::class, 'show']);
 Route::get('/restaurants/{id}', [RestaurantController::class, 'show']);
