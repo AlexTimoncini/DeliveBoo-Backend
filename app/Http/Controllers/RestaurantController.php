@@ -190,9 +190,9 @@ class RestaurantController extends Controller
         }
 
         $bestOrders = Order::where('user_id', $id)
+            ->where('successful', 1)
             ->orderByDesc('total_price')
-            ->paginate(5)
-        ;
+            ->paginate(5);
         // 
 
 
@@ -365,6 +365,29 @@ class RestaurantController extends Controller
                 'customer_name' => $customer->customer_name,
                 'total_spent' => $customer->total_spent,
             ],
+        ]);
+    }
+
+    public function ordersTimeLine(Int $id){
+        $ordersNumber = count(Order::where('user_id', $id)->where('successful', 1)->get());
+
+        if($ordersNumber >= 10){
+            $orders = Order::where('user_id', $id)
+            ->where('successful', 1)
+            ->orderBy('created_at', 'asc')
+            ->skip($ordersNumber - 10)
+            ->take(10)
+            ->get();
+        } else {
+            $orders = Order::where('user_id', $id)
+            ->where('successful', 1)
+            ->orderBy('created_at', 'asc')
+            ->get();
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $orders ,
         ]);
     }
 }

@@ -45,6 +45,7 @@ Route::get('/restaurants/winner', [RestaurantController::class, 'bestRestaurantE
 Route::get('/restaurants/winnerMonth', [RestaurantController::class, 'bestRestaurantMonth']);
 Route::get('/restaurants/{id}/bestcustomer', [RestaurantController::class, 'bestCustomer']);
 Route::get('/restaurants/{id}/bestOrders', [RestaurantController::class, 'bestOrders']);
+Route::get('/restaurants/{id}/ordersTimeLine', [RestaurantController::class, 'ordersTimeLine']);
 
 Route::get('/restaurants/logo/{id}', [ImagesController::class, 'show']);
 Route::get('/restaurants/{id}', [RestaurantController::class, 'show']);
