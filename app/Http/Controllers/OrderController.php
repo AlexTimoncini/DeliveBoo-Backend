@@ -26,7 +26,9 @@ class OrderController extends Controller
             'surname' => ['required', 'string', 'max:255', 'min:3'],
             'email' => ['required', 'string', 'email', 'max:255', 'min:3'],
             'address' => ['required', 'string', 'max:255', 'min:3'],
-            'telephone' => ['required']
+            'telephone' => ['required'],
+            'interior' => ['nullable', 'integer', 'digits_between:1,3'],
+            'doorbell' => ['nullable', 'integer', 'digits_between:1,3']
         ]);
 
         $newOrder = new Order();
@@ -37,7 +39,8 @@ class OrderController extends Controller
         $newOrder->doorbell = $data['name'] . ' ' . $data['surname'];
         $newOrder->phone = $data['telephone'];
         $newOrder->total_price = $request->totalPrice;
-        $newOrder->interior = 'A';
+        $newOrder->interior = $data['interior'];
+        $newOrder->doorbell = $data['doorbell'];
         $result = $gateway->transaction()->sale([
             'amount' => $request->totalPrice,
             'paymentMethodNonce' => $request->nonce,
