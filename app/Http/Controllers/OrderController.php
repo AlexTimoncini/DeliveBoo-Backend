@@ -27,8 +27,8 @@ class OrderController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'min:3'],
             'address' => ['required', 'string', 'max:255', 'min:3'],
             'telephone' => ['required'],
-            'interior' => ['nullable', 'integer', 'digits_between:1,3'],
-            'doorbell' => ['nullable', 'integer', 'digits_between:1,3']
+            'interior' => ['nullable', 'digits_between:1,3'],
+            'doorbell' => ['nullable', 'digits_between:1,3']
         ]);
 
         $newOrder = new Order();
