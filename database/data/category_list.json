@@ -1,5 +1,5 @@
 {
-    "categories" : [
+    "categories": [
         {
             "name": "Burger",
             "color": "#f2cf63"
@@ -54,6 +54,10 @@
         },
         {
             "name": "Vegan",
+            "color": "#88a61c"
+        },
+        {
+            "name": "Piadine",
             "color": "#88a61c"
         }
     ]

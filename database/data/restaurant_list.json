@@ -1068,6 +1068,529 @@
                     "customer_address": "15 Rue Vito, L-1112"
                 }
             ]
+        },
+        {
+            "name": "La Pasta di Nonna Rosa",
+            "password": "Grosso2006frfr",
+            "email": "nonnaroosa@pasta.fr",
+            "vat_number": "LU87874321",
+            "phone": "+352 88 56 44 96",
+            "description": "Pasta di nonna Rosa is an Italian restaurant that makes you feel like you are home, in Rome, with your granma who is serving you pasta and tomatoes",
+            "address": "23 Rue De Macron, L-1261",
+            "type_list": [
+                "Italian"
+            ],
+            "logo": "/osteria_cacina.png",
+            "image": "https://www.bcoolguide.com/wp-content/uploads/2016/bentivoglio1.jpg",
+            "dish_list": [
+                {
+                    "name": "Spaghetti al Pomodoro",
+                    "description": "Your Granma favourite",
+                    "price": 6.99,
+                    "photo": "https://www.giallozafferano.it/images/221-22163/Spaghetti-al-pomodoro_650x433_wm.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Pasta",
+                        "Egg",
+                        "Pork",
+                        "Cheese"
+                    ],
+                    "category": "Pasta"
+                },
+                {
+                    "name": "Lasagne",
+                    "description": "You can only say: Oh my God",
+                    "price": 6.99,
+                    "photo": "https://st.focusedcollection.com/13397678/i/650/focused_169015568-stock-photo-baked-feta-cheese-sun-dried.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Pasta",
+                        "Tomato",
+                        "Ragu",
+                        "Cheese"
+                    ],
+                    "category": "Pasta"
+                },
+                {
+                    "name": "Tortellini Bolognesi",
+                    "description": "For cream and Prosciutto lovers!",
+                    "price": 8.40,
+                    "photo": "https://i0.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2018/08/3700_Tortellini.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Pasta",
+                        "Ham",
+                        "Cheese"
+                    ],
+                    "category": "Pasta"
+                },
+                {
+                    "name": "Water",
+                    "description": "For when you are thirsty!",
+                    "price": 2.50,
+                    "photo": "https://www.ristorantepark.com/wp-content/uploads/2019/02/menu-del-giorno-acqua-min.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Water"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "Red Wine",
+                    "description": "Water makes you rusty",
+                    "price": 3.50,
+                    "photo": "https://www.osterialaruta.it/wp-content/uploads/2021/03/Barbera2019.png",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Red Wine"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "White Wine",
+                    "description": "Water makes you rusty",
+                    "price": 3.50,
+                    "photo": "https://osteriapasseri.it/wp-content/uploads/2021/12/vino_biaco_osteria_passeri.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "White Wine"
+                    ],
+                    "category": "Drink"
+                }
+            ],
+            "order_list": [
+                {
+                    "dish_list": [
+                        "Spaghetti al Pomodoro",
+                        "Tortellini Bolognesi",
+                        "Red Wine"
+                    ],
+                    "customer_address": "23 Rue Michelle, L-2121"
+                },
+                {
+                    "dish_list": [
+                        "Lasagne",
+                        "Water"
+                    ],
+                    "customer_address": "16 Rue Donald D., L-9999"
+                },
+                {
+                    "dish_list": [
+                        "Spaghetti al Pomodoro",
+                        "Spaghetti al Pomodoro",
+                        "Lasagne",
+                        "Water",
+                        "White Wine"
+                    ],
+                    "customer_address": "15 Rue Makima, L-1112"
+                }
+            ]
+        },
+        {
+            "name": "Pizziumissimo",
+            "password": "Grosso2006frfr",
+            "email": "pizziumissimo@bool.fr",
+            "vat_number": "LU87870321",
+            "phone": "+352 23 56 03 96",
+            "description": "At Pizziumissimo, we make pizza so good, it even impresses famous Italian landmarks! Our ovens are hotter than summer in Rome, and our toppings are fresher than a wish at the Trevi Fountain. Come for a slice of laughter and a whole lot of deliciousness!",
+            "address": "23 Rue De Po[, L-1261",
+            "type_list": [
+                "Italian"
+            ],
+            "logo": "/osteria_cacina.png",
+            "image": "https://media-cdn.tripadvisor.com/media/photo-s/29/a9/24/62/bufalina.jpg",
+            "dish_list": [
+                {
+                    "name": "Margherita",
+                    "description": "The best one is the classic one",
+                    "price": 6.99,
+                    "photo": "https://media-cdn.tripadvisor.com/media/photo-s/1c/2a/68/85/bufalina.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Pasta",
+                        "Cheese",
+                        "Basil",
+                        "Tomato"
+                    ],
+                    "category": "Pizza"
+                },
+                {
+                    "name": "Marinara",
+                    "description": "It's a lighter margherita",
+                    "price": 5.99,
+                    "photo": "https://media-cdn.tripadvisor.com/media/photo-s/15/60/64/64/pizza-marinara.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Pasta",
+                        "Tomato",
+                        "Basil",
+                        "Olive",
+                        "Fish"
+                    ],
+                    "category": "Pizza"
+                },
+                {
+                    "name": "Carbonara",
+                    "description": "Rome and Naples in only one dish",
+                    "price": 7.40,
+                    "photo": "https://www.scattidigusto.it/wp-content/uploads/2014/06/carbonara-pizza.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Pasta",
+                        "Bacon",
+                        "Cheese",
+                        "Egg"
+                    ],
+                    "category": "Pizza"
+                },
+                {
+                    "name": "Water",
+                    "description": "For when you are thirsty!",
+                    "price": 2.50,
+                    "photo": "https://www.ristorantepark.com/wp-content/uploads/2019/02/menu-del-giorno-acqua-min.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Water"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "Red Wine",
+                    "description": "Water makes you rusty",
+                    "price": 3.50,
+                    "photo": "https://www.virginwines.co.uk/hub/wp-content/uploads/Red_Wine_Shot-70.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Red Wine"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "White Wine",
+                    "description": "Water makes you rusty",
+                    "price": 3.50,
+                    "photo": "https://www.culinaryhill.com/wp-content/uploads/2023/03/A-Guide-to-White-Wine-Culinary-Hill-LR-08.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "White Wine"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "BoolCoke",
+                    "description": "This chemicals are good!",
+                    "price": 2.50,
+                    "photo": "https://www.coca-colaitalia.it/content/dam/one/it/it/brand-header-mobile/900x600/cocacola-original-taste-desktop-900x600.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Water"
+                    ],
+                    "category": "Drink"
+                }
+            ],
+            "order_list": [
+                {
+                    "dish_list": [
+                        "Margherita",
+                        "Carbonara",
+                        "BoolCoke"
+                    ],
+                    "customer_address": "23 Rue Aki, L-2121"
+                },
+                {
+                    "dish_list": [
+                        "Margherita",
+                        "Water",
+                        "BoolCoke"
+                    ],
+                    "customer_address": "16 Rue Power, L-9999"
+                },
+                {
+                    "dish_list": [
+                        "Marinara",
+                        "Margherita",
+                        "Carbonara",
+                        "Water",
+                        "White Wine"
+                    ],
+                    "customer_address": "15 Rue Denji, L-1112"
+                }
+            ]
+        },
+        {
+            "name": "olo-olo ravioleria",
+            "password": "Grosso2006frfr",
+            "email": "oloolo@bool.fr",
+            "vat_number": "LU87333321",
+            "phone": "+352 23 33 33 96",
+            "description": "Step into 'Olo Olo,' where dumplings take center stage and your taste buds do a happy dance! Our dumplings are so good, they've been known to out-dance dragon parades. ",
+            "address": "23 Rue De Floertie, L-1261",
+            "type_list": [
+                "Asian",
+                "Chinese"
+            ],
+            "logo": "/osteria_cacina.png",
+            "image": "https://rs-menus-api.roocdn.com/images/4d55532c-a5c6-47ec-afbc-a051562bb00a/image.jpeg",
+            "dish_list": [
+                {
+                    "name": "Involtino olo olo",
+                    "description": "Welcome to the enchanting world of spring rolls! These little bundles of culinary delight are like surprise parties for your taste buds.",
+                    "price": 2.99,
+                    "photo": "https://www.giallozafferano.it/images/ricette/230/23004/foto_hd/hd650x433_wm.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Rice",
+                        "Carrot",
+                        "Onion",
+                        "Garlic",
+                        "Lettuce"
+                    ],
+                    "category": "Appetizer"
+                },
+                {
+                    "name": "Wanton Soup",
+                    "description": "With delicate dumplings swimming in a sea of flavorful broth, wonton soup is a warm embrace waiting to be savored.",
+                    "price": 5.99,
+                    "photo": "https://www.agrodolce.it/app/uploads/2020/03/zuppa-di-wonton-con-carne-2020-i-025-scaled.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Pasta",
+                        "Mushroom",
+                        "Lettuce",
+                        "Pork"
+                    ],
+                    "category": "Sides"
+                },
+                {
+                    "name": "Cantonese Rice",
+                    "description": "These tiny, flavor-packed grains are like flavor fireworks for your palate. ",
+                    "price": 6.40,
+                    "photo": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/1dd71a6b-bd81-4a7a-8013-114c731d1165/Derivates/21db79a0-9d69-44d2-8852-6945bc8fc0de.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Rice",
+                        "Egg",
+                        "Bacon",
+                        "Carrot",
+                        "Peas"
+                    ],
+                    "category": "Sides"
+                },
+                {
+                    "name": "Pork Dumplings",
+                    "description": "These tiny, flavor-packed grains are like flavor fireworks for your palate. ",
+                    "price": 5.50,
+                    "photo": "https://cuchina.it/wp-content/uploads/2022/07/IMG_20220718_104214-853x1024.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Rice",
+                        "Pork",
+                        "Garlic"
+                    ],
+                    "category": "Sides"
+                },
+                {
+                    "name": "Shrimp Dumplings",
+                    "description": "These tiny, flavor-packed grains are like flavor fireworks for your palate. ",
+                    "price": 5.50,
+                    "photo": "https://www.profumodicannella.net/wp-content/uploads/2020/04/481_Ravioli-di-gamberi-al-vapore-0D6A0640_web-1024x683.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Rice",
+                        "Shrimp",
+                        "Garlic",
+                        "Peas"
+                    ],
+                    "category": "Sides"
+                },
+                {
+                    "name": "Water",
+                    "description": "For when you are thirsty!",
+                    "price": 2.50,
+                    "photo": "https://www.ristorantepark.com/wp-content/uploads/2019/02/menu-del-giorno-acqua-min.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Water"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "Red Wine",
+                    "description": "Water makes you rusty",
+                    "price": 3.50,
+                    "photo": "https://www.virginwines.co.uk/hub/wp-content/uploads/Red_Wine_Shot-70.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Red Wine"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "White Wine",
+                    "description": "Water makes you rusty",
+                    "price": 3.50,
+                    "photo": "https://www.culinaryhill.com/wp-content/uploads/2023/03/A-Guide-to-White-Wine-Culinary-Hill-LR-08.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "White Wine"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "BoolCoke",
+                    "description": "This chemicals are good!",
+                    "price": 2.50,
+                    "photo": "https://www.coca-colaitalia.it/content/dam/one/it/it/brand-header-mobile/900x600/cocacola-original-taste-desktop-900x600.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "White Wine"
+                    ],
+                    "category": "Drink"
+                }
+            ],
+            "order_list": [
+                {
+                    "dish_list": [
+                        "Pork Dumplings",
+                        "Involtino olo olo",
+                        "BoolCoke"
+                    ],
+                    "customer_address": "23 Rue Aki, L-2121"
+                },
+                {
+                    "dish_list": [
+                        "Shrimp Dumplings",
+                        "Water",
+                        "BoolCoke"
+                    ],
+                    "customer_address": "16 Rue Power, L-9999"
+                },
+                {
+                    "dish_list": [
+                        "Shrimp Dumplings",
+                        "Pork Dumplings",
+                        "Involtino olo olo",
+                        "Water",
+                        "Wanton Soup",
+                        "White Wine"
+                    ],
+                    "customer_address": "15 Rue Denji, L-1112"
+                }
+            ]
+        },
+        {
+            "name": "Kebwow",
+            "password": "Grosso2006frfr",
+            "email": "kebwow@bool.fr",
+            "vat_number": "LU87112321",
+            "phone": "+352 22 11 22 96",
+            "description": "Welcome to 'Kebwow,' where kebabs are so incredible they'll make you say 'Wow' with every bite! Our kebabs are like flavor fireworks, and they've got more moves than a belly dancer at a bazaar.",
+            "address": "23 Rue De Parserie Vue, L-1261",
+            "type_list": [
+                "Turkish",
+                "Arabic"
+            ],
+            "logo": "/osteria_cacina.png",
+            "image": "https://rs-menus-api.roocdn.com/images/110873dc-23b0-4b1e-84bd-9674fa573e0a/image.jpeg",
+            "dish_list": [
+                {
+                    "name": "Cicken Classic",
+                    "description": "Chicken kepap 100% from the street",
+                    "price": 6.99,
+                    "photo": "https://simshomekitchen.com/wp-content/uploads/2022/04/Tandoori-skewers-1.png",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Chicken",
+                        "Senape",
+                        "Chili pepper"
+                    ],
+                    "category": "Kebab"
+                },
+                {
+                    "name": "Kebby king",
+                    "description": "With each juicy bite, you embark on a taste journey that's both savory and sensational.",
+                    "price": 6.99,
+                    "photo": "https://www.vicenzatoday.it/~media/horizontal-hi/3310647164206/kebab1-2-3.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Chicken",
+                        "Senape",
+                        "Fries",
+                        "Yogurt",
+                        "Salad"
+                    ],
+                    "category": "Kebab"
+                },
+                {
+                    "name": "Planted",
+                    "description": "Super uber vegan kepap, for people with problems",
+                    "price": 6.40,
+                    "photo": "https://images.immediate.co.uk/production/volatile/sites/30/2022/03/Vegan-kebabs-3322e41.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Peas",
+                        "Salad",
+                        "Carrots",
+                        "Yogurt"
+                    ],
+                    "category": "Kebab"
+                },
+                {
+                    "name": "Water",
+                    "description": "For when you are thirsty!",
+                    "price": 2.50,
+                    "photo": "https://raja.scene7.com/is/image/Raja/products/lilia-acqua-minerale-naturale-bottiglia-di-plastica-500-ml-confezione-24-bottiglie_34705.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Water"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "Beer",
+                    "description": "Water makes you rusty",
+                    "price": 3.50,
+                    "photo": "https://laorange.it/wp-content/uploads/2021/05/LOVALE-front-Q-1-scaled.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Beer"
+                    ],
+                    "category": "Drink"
+                },
+                {
+                    "name": "BoolCoke",
+                    "description": "This chemicals are good!",
+                    "price": 2.50,
+                    "photo": "hhttps://ercoli1928.com/wp-content/uploads/2020/12/1T4A7347-scaled-1.jpg",
+                    "availability": true,
+                    "ingredient_list": [
+                        "Water"
+                    ],
+                    "category": "Drink"
+                }
+            ],
+            "order_list": [
+                {
+                    "dish_list": [
+                        "Beer"
+                    ],
+                    "customer_address": "23 Rue Giovanna Arco, L-2121"
+                },
+                {
+                    "dish_list": [
+                        "Water",
+                        "BoolCoke"
+                    ],
+                    "customer_address": "16 Rue Pinocchia, L-9999"
+                },
+                {
+                    "dish_list": [
+                        "Water",
+                        "Beer"
+                    ],
+                    "customer_address": "15 Rue Sendo, L-1112"
+                }
+            ]
         }
     ]
 }
