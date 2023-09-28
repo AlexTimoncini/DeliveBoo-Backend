@@ -1,60 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeliveBoo Contacts</title>
     <style>
-        /* Stili per l'intestazione */
-        .mini-view-header {
-            background-color: #01975c; /* Verde primario */
-            color: white; /* Testo bianco */
-            padding: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-
-        /* Stili per il contenuto */
-        .mini-view-content {
-            background-color: #f4b807; /* Giallo secondario */
-            padding: 10px;
+        .header {
+            background-color: #01975c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
         }
-
-        /* Stili per il testo del nome e del messaggio */
-        .mini-view-name {
+        .content {
+            background-color: #f4b807;
+            padding: 20px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
             font-size: 18px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        a.button {
+            background-color: #01975c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
             font-weight: bold;
         }
-
-        .mini-view-message {
-            font-size: 16px;
-            margin-top: 10px;
+        .button:hover {
+            color: black;
+            background-color: #f4b807;
         }
     </style>
 </head>
 <body>
-    <!-- Contenitore principale -->
-    <div class="mini-view-container">
-        <!-- Logo sulla destra -->
-        
-        <!-- Intestazione della mini vista -->
-        <div class="mini-view-header">
-            DELIVEBOO MESSAGE
-        </div>
+    <div class="header">
+        <h1>DeliveBoo</h1>
     </div>
-
-    <!-- Contenuto -->
-    <div class="mini-view-content">
-        <!-- Nome del mittente -->
-        <div class="mini-view-name">
-            User: {{ $lead->name }}
+    <div class="content">
+        <p>Hi I'm {{ $lead->name }},</p>
+        <p>I'm writing from DeliveBoo App with this mail: {{ $lead->email }} in order to say this:</p>
+        
+        <div class="message">
+            <p> ~{{ $lead->message }}~</p>
         </div>
-        <div class="mini-view-name">
-            Email: {{ $lead->email }}
-        </div>
-
-        <!-- Messaggio -->
-        <div class="mini-view-message">
-            Message: {{ $lead->message }}
-        </div>
+        <p><a href="http://localhost:3000/" class="button">Are you hungry?</a></p>
+        
+        <p>
+        Boo Gonna Conquer the world!<br/>
+        Boo greetings,<br/>
+        Deliveboo Team
+        </p>
     </div>
 </body>
 </html>
