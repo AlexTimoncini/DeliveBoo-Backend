@@ -78,7 +78,7 @@ class RestaurantController extends Controller
 
     public function show(int $id)
     {
-        $restaurant = User::with('types', 'dishes.ingredients', )->findOrFail($id);
+        $restaurant = User::with('types', 'dishes.ingredients',)->findOrFail($id);
         return response()->json([
             "success" => true,
             "data" => $restaurant
@@ -163,8 +163,10 @@ class RestaurantController extends Controller
     public function deleteAccount(int $id)
     {
         $restaurant = User::findOrFail($id);
-        Storage::delete($restaurant->image);
-        Storage::delete($restaurant->logo);
+        if ($restaurant->image && $restaurant->logo) {
+            Storage::delete($restaurant->image);
+            Storage::delete($restaurant->logo);
+        }
         $restaurant->delete();
         if ($restaurant) {
             return response()->json([
@@ -200,7 +202,6 @@ class RestaurantController extends Controller
             'success' => true,
             'results' => $bestOrders,
         ]);
-
     }
 
     public function rankingEver(int $id)
@@ -368,26 +369,27 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function ordersTimeLine(Int $id){
+    public function ordersTimeLine(Int $id)
+    {
         $ordersNumber = count(Order::where('user_id', $id)->where('successful', 1)->get());
 
-        if($ordersNumber >= 10){
+        if ($ordersNumber >= 10) {
             $orders = Order::where('user_id', $id)
-            ->where('successful', 1)
-            ->orderBy('created_at', 'asc')
-            ->skip($ordersNumber - 10)
-            ->take(10)
-            ->get();
+                ->where('successful', 1)
+                ->orderBy('created_at', 'asc')
+                ->skip($ordersNumber - 10)
+                ->take(10)
+                ->get();
         } else {
             $orders = Order::where('user_id', $id)
-            ->where('successful', 1)
-            ->orderBy('created_at', 'asc')
-            ->get();
+                ->where('successful', 1)
+                ->orderBy('created_at', 'asc')
+                ->get();
         }
 
         return response()->json([
             'success' => true,
-            'data' => $orders ,
+            'data' => $orders,
         ]);
     }
 }
